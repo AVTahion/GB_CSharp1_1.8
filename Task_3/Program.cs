@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,12 +18,14 @@ using System.Windows.Forms;
 
 namespace Task_3
 {
-    static class Program
+    static partial class Program
     {
-        /// <summary>
-        /// Главная точка входа для приложения.
-        /// </summary>
-        [STAThread]
+    
+
+    /// <summary>
+    /// Главная точка входа для приложения.
+    /// </summary>
+    [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
