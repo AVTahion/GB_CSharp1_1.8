@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Reflection;
+using System.Windows.Forms;
 
-/*  1.  С помощью рефлексии выведите все свойства структуры DateTime
-    2.  Создайте простую форму на котором свяжите свойство Text элемента TextBox со свойством Value элемента NumericUpDown
+/* 
     3.  а) Создать приложение, показанное на уроке, добавив в него защиту от возможных ошибок(не создана база данных,
         обращение к несуществующему вопросу, открытие слишком большого файла и т.д.).
         б) Изменить интерфейс программы, увеличив шрифт, поменяв цвет элементов и добавив другие «косметические» улучшения на свое усмотрение.
@@ -19,22 +17,19 @@ using System.Reflection;
  Александр Кушмилов
 */
 
-namespace Task_1
+namespace Task_3
 {
-    class Program
+    static class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// Главная точка входа для приложения.
+        /// </summary>
+        [STAThread]
+        static void Main()
         {
-
-            Type t = typeof(DateTime);
-            Console.WriteLine("Properties:");
-            System.Reflection.PropertyInfo[] memberInfo = t.GetProperties();
-
-            foreach (System.Reflection.PropertyInfo mInfo in memberInfo)
-                Console.WriteLine(mInfo.ToString());
-
-            Console.ReadKey();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
         }
-
     }
 }
